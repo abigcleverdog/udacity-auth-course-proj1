@@ -1,0 +1,41 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	
+<div class = 'flash'>
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+</div>
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+	<h2>Edit Item</h2>
+<form action="#" method='POST'>
+  Item name:<br>
+  <input type="text" name="name" value="{{item.name}}"><br>
+  Description:<br>
+  <textarea name="description" rows="10" cols="80">{{item.description}}
+  </textarea><br>
+  <select name="category_id">
+    {% for cat in cats %}
+	{% if cat.id == item.category_id %}
+		<option value="{{cat.id}}" selected>{{cat.name}}</option>
+	{% endif %}
+		<option value="{{cat.id}}">{{cat.name}}</option>
+	{% endfor %}
+  </select>
+  <br><br>  
+  <input type="submit" value="Submit">
+</form>
+<hr>
+
+{% endblock %}

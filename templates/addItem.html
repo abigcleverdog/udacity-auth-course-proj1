@@ -1,0 +1,38 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+	
+<div class = 'flash'>
+		      {% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+
+</div>
+<div class="col-md-2">
+</div>
+<div class="col-md-8">
+	<h2>Add Item</h2>
+<form action="#" method='POST'>
+  Item name:<br>
+  <input type="text" name="name" value="Max 80 characters"><br>
+  Description:<br>
+  <textarea name="description" rows="10" cols="80">What is it good for?
+  </textarea><br>
+  <select name="category_id">
+    {% for cat in cats %}
+		<option value="{{cat.id}}">{{cat.name}}</option>
+	{% endfor %}
+  </select>
+  <br><br>  
+  <input type="submit" value="Submit">
+</form>
+<hr>
+
+{% endblock %}
