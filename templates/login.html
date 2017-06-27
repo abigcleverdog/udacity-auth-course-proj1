@@ -22,7 +22,7 @@
           
           <div id="signInButton">
           <span class="g-signin"
-            data-scope="openid email"
+            data-scope="openid email profile"
             data-clientid="820537101896-itoacfo9mslpqq4766u239l4mvj8h0g0.apps.googleusercontent.com"
             data-redirecturi="postmessage"
             data-accesstype="offline"
@@ -70,11 +70,11 @@ function signInCallback(authResult) {
 
 <!--END GOOGLE PLUS SIGN IN -->
 
-<!-- 
+
 <script>
   window.fbAsyncInit = function() {
   FB.init({
-    appId      : '307002863045406',
+    appId      : '146236835938507',
     cookie     : true,  // enable cookies to allow the server to access 
                         // the session
     xfbml      : true,  // parse social plugins on this page
@@ -99,7 +99,7 @@ function signInCallback(authResult) {
       console.log('Successful login for: ' + response.name);
      $.ajax({
       type: 'POST',
-      url: '/fbconnect?state={{STATE}}',
+      url: '/fbcon?state={{STATE}}',
       processData: false,
       data: access_token,
       contentType: 'application/octet-stream; charset=utf-8',
@@ -108,8 +108,8 @@ function signInCallback(authResult) {
         if (result) {
           $('#result').html('Login Successful!</br>'+ result + '</br>Redirecting...')
          setTimeout(function() {
-          window.location.href = "/restaurant";
-         }, 4000);
+          window.location.href = "/home";
+         }, 2000);
           
       } else {
         $('#result').html('Failed to make a server-side call. Check your configuration and console.');
@@ -132,7 +132,7 @@ function signInCallback(authResult) {
 
 
         </button> 
--->
+
 <!--END FACEBOOK SIGN IN -->
 
 
