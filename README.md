@@ -21,7 +21,7 @@ To use the program, you need to:
  - install sqlalchemy, flask, and Oauth2.0
  - run the database_setupi.py in the command line
  - *(optional)run itempop.py in the command line if you want prepopulate the database
- - run item.py in the command line 
+ - run itemcat.py in the command line 
  - view the application in a browser at 'http://localhost:8000/home'
 
 # License
