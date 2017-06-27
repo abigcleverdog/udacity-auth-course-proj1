@@ -360,7 +360,7 @@ def add():
         session.add(newItem)
         session.commit()
         flash('%s has been added!!' % newItem.name)
-        return render_template('addItem.html', cats=cats)
+        return redirect(url_for('home'))
     else:
         return render_template('addItem.html', cats=cats)
 
